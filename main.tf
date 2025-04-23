@@ -1,6 +1,6 @@
 locals {
   enabled        = module.this.enabled
-  instance_count = local.enabled ? 1 : 0
+  instance_count = local.enabled ? var.instance_count : 0
   volume_count   = var.ebs_volume_count > 0 && local.instance_count > 0 ? var.ebs_volume_count : 0
   # create an instance profile if the instance is enabled and we aren't given one to use
   instance_profile_count = module.this.enabled && var.instance_profile_enabled && var.instance_profile == "" ? 1 : 0

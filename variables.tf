@@ -447,3 +447,9 @@ variable "stop_ec2_before_detaching_vol" {
   default     = false
   description = "Set this to true to ensure that the target instance is stopped before trying to detach the volume/s."
 }
+
+variable "instance_count" {
+  type        = number
+  default     = 1
+  description = "How many EC2s should be created"
+}
